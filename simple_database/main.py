@@ -2,8 +2,8 @@ import os
 import json
 import datetime
 
-from config import BASE_DB_FILE_PATH
-from exceptions import ValidationError
+from .config import BASE_DB_FILE_PATH
+from .exceptions import ValidationError
 
 
 LIST_OF_DB_INSTANCES = []
