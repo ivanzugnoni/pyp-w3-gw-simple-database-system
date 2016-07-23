@@ -5,7 +5,7 @@ import shutil
 import unittest
 from datetime import date
 
-from simple_database import create_database, connect_database
+from simple_database import create_database, connect_database, get_data
 from simple_database.config import BASE_DB_FILE_PATH
 from simple_database.exceptions import ValidationError
 
@@ -65,7 +65,6 @@ class SimpleDatabaseTestCase(unittest.TestCase):
         ])
         db.authors.insert(1, 'Jorge Luis Borges', date(1899, 8, 24), 'ARG', False)
         self.assertEqual(db.authors.count(), 1)
-
         new_db = connect_database('test-db')
         self.assertEqual(new_db.show_tables(), ['authors'])
         self.assertEqual(new_db.authors.count(), 1)
